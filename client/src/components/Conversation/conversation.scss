@@ -1,0 +1,49 @@
+.conversation-container {
+  overflow: auto;
+  flex: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px;
+
+  ul {
+    padding: 0;
+
+    .message-container {
+      display: flex;
+      flex-direction: row;
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      p {
+        font-size: 12px;
+        margin: 0;
+        color: rgba(180, 180, 180, 1);
+
+        span.username {
+          font-weight: bold;
+          font-size: 14px;
+          color: rgba(33, 33, 33, 1);
+        }
+      }
+
+      &.sequential {
+        margin-top: 5px;
+
+        .sf-ui--avatar, p {
+          display: none;
+        }
+
+        .text {
+          margin-left: 50px;
+        }
+      }
+    }
+  }
+}

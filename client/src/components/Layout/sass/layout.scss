@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900&subset=latin,latin-ext);
+
+a, a:hover, a:active, a:visited {
+  text-decoration: none!important;
+}
+
+html, body,
+#render-target,
+#app-container {
+  height: 100%;
+}
+
+#app-container {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+
+  .sidebar-wrapper {
+    width: 280px;
+    height: 100%;
+  }
+
+  .content-wrapper {
+    height: 100%;
+    flex: 1;
+  }
+}

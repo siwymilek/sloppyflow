@@ -1,0 +1,8 @@
+{
+  "name": "Piquant",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "normalize-css": "normalize.css#^4.1.1",
+    "font-awesome": "^4.6.2"
+  }
+}

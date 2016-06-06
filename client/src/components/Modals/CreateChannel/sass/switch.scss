@@ -1,0 +1,61 @@
+.channel--ui-switch {
+  width: 120px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  position: relative;
+  color: rgba(255, 255, 255, 1);
+
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .dot {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: #fff;
+    border-radius: 50%;
+    //position: absolute;
+    //top: 2px;
+  }
+
+  &.off {
+    background: rgba(232, 0, 76, 1);
+
+    span.text.on {
+      display: none;
+    }
+
+    .dot {
+      align-self: flex-start;
+    }
+  }
+
+  &.on {
+    background: rgba(22, 193, 84, 1);
+
+    span.text.off {
+      display: none;
+    }
+
+    .dot {
+      align-self: flex-end;
+    }
+  }
+
+  .channel--ui-switch-slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+}

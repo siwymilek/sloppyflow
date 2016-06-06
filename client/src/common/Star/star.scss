@@ -1,0 +1,11 @@
+.sf-ui--star {
+  color: rgba(144, 144, 144, 1);
+
+  &:hover {
+    color: rgba(0, 0, 0, 1);
+  }
+
+  .active {
+    color: rgba(254, 207, 9, 1);
+  }
+}

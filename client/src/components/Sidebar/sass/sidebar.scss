@@ -1,0 +1,222 @@
+.sidebar-component {
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 46, 66, 1);
+  display: flex;
+  flex-direction: column;
+
+  .sidebar--header {
+    //height: 40px;
+    //background: rgba(0, 0, 0, 0.95);
+    color: #fff;
+    padding: 20px;
+    //box-sizing: border-box;
+    //flex: 1;
+    //margin-bottom: 30px;
+
+    .logo a {
+      &:hover {
+        text-decoration: none;
+      }
+
+      h1 {
+        color: #fff;
+        margin: 0;
+        font-size: 20px;
+      }
+    }
+
+    .create-new {
+      margin-top: 20px;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .sidebar--bell-icon {
+      color: rgba(255, 255, 255, 0.2);
+      font-size: 28px;
+    }
+
+    .open.dropdown .sidebar--bell-icon,
+    .sidebar--bell-icon:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+
+  .sidebar--channels {
+    box-sizing: border-box;
+    padding: 20px 0;
+    //background: rgba(255, 0, 0, 0.2);
+    position: relative;
+
+    .top {
+      padding-left: 20px;
+      padding-right: 20px;
+      overflow: hidden;
+
+      .more {
+        margin-right: 15px;
+      }
+
+      h4 {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.45);
+        text-transform: uppercase;
+        margin: 0;
+        display: inline-block;
+        float: left;
+      }
+
+      a {
+        float: right;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+
+    &>ul {
+      padding: 0;
+
+      li {
+        display: block;
+
+        &.active {
+          background: rgba(255, 255, 255, 1);
+
+          a {
+            color: rgba(0, 0, 0, 0.8);
+          }
+        }
+
+        .icon {
+          display: inline-block;
+          width: 30px;
+          text-align: center;
+        }
+        
+        .badge {
+          background: rgba(38, 184, 206, 1);
+        }
+
+        &>a {
+          padding: 10px 20px;
+          color: rgba(255, 255, 255, 0.3);
+          font-size: 14px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .options {
+            display: none;
+
+            a {
+              color: inherit;
+            }
+          }
+
+          &:hover {
+            .options {
+              display: inline;
+            }
+
+            text-decoration: none;
+          }
+
+          .badge {
+          }
+        }
+
+        &:not(.active) a:hover {
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+
+  .sidebar--footer {
+    margin-top: auto;
+    overflow: hidden;
+
+    a.profile-toggle {
+      height: 80px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: rgba(255, 255, 255, 1);
+      //background: rgba(44, 46, 66, 1);
+      position: relative;
+
+      background: -moz-linear-gradient(top, rgba(44, 46, 66, 1) 0%, rgba(255,255,255, 0.15) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(44, 46, 66, 1) 0%,rgba(255,255,255, 0.15) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(44, 46, 66, 1) 0%,rgba(255,255,255, 0.15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#031e5799', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      .arrow {
+        width: 18px;
+        height: 18px;
+        margin-left: auto;
+        margin-right: 20px;
+        -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.000, 0.630, 0.000, 0.995);
+        -moz-transition: -moz-transform 0.3s cubic-bezier(0.000, 0.630, 0.000, 0.995);
+        -o-transition: -o-transform 0.3s cubic-bezier(0.000, 0.630, 0.000, 0.995);
+        transition: transform 0.3s cubic-bezier(0.000, 0.630, 0.000, 0.995);
+
+        &.close-arrow {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .footer--menu {
+      margin: 0;
+      padding: 0 10px;
+      position: relative;
+
+      -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.000, 0.630, 0.000, 0.995);
+      -moz-transition: -moz-transform 0.3s cubic-bezier(0.000, 0.630, 0.000, 0.995);
+      -o-transition: -o-transform 0.3s cubic-bezier(0.000, 0.630, 0.000, 0.995);
+      transition: transform 0.3s cubic-bezier(0.000, 0.630, 0.000, 0.995);
+
+      &:before {
+        content: '';
+        width: 100%;
+        height: 40px;
+        background: red;
+        position: absolute;
+        top: -40px;
+        left: 0;
+
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2c2e42+99&0.01+0,1+100 */
+        background: -moz-linear-gradient(top, rgba(44, 46, 66, 1) 0%, rgba(44,46,66,0.99) 99%, rgba(44,46,66,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(44, 46, 66, 1) 0%,rgba(44,46,66,0.99) 99%,rgba(44,46,66,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(44, 46, 66, 1) 0%,rgba(44,46,66,0.99) 99%,rgba(44,46,66,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#031e5799', endColorstr='#2c2e42',GradientType=0 ); /* IE6-9 */
+      }
+
+      &.menu-hidden {
+        transform: translateY(calc(100% + 100px));
+      }
+
+      li {
+        &:not(:last-child) {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        a {
+          padding: 10px;
+          display: block;
+          color: rgba(255, 255, 255, 0.6);
+
+          &:hover {
+            background: rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "piquant",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "boron": "^0.2.3",
+    "classnames": "^2.2.5",
+    "halogen": "^0.2.0",
+    "immutable": "^3.8.1",
+    "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.13.0",
+    "react": "^15.0.2",
+    "react-bootstrap": "^0.29.3",
+    "react-document-title": "^2.0.1",
+    "react-dom": "^15.0.2",
+    "react-motion": "^0.4.3",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.4.0",
+    "react-router-transition": "0.0.5",
+    "react-s-alert": "^1.1.3",
+    "react-select": "^1.0.0-beta13",
+    "redux": "^3.5.2",
+    "redux-form": "^5.2.4",
+    "redux-thunk": "^2.0.1"
+  },
+  "devDependencies": {}
+}
