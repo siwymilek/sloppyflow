@@ -1,4 +1,6 @@
 import { Meteor } from 'meteor/meteor';
+import { Session } from 'meteor/session';
+
 import { SubscribedChannels } from '../../../imports/models/SubscribedChannel';
 
 export function createChannel(name, members = [], type = 'channel', isPrivate = false) {

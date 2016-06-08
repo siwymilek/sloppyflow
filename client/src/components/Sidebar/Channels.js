@@ -10,16 +10,7 @@ export default class Channels extends Component {
 
         this.state = {
             showChannels: 10,
-            currentChannelId: null
         }
-    }
-
-    componentDidMount() {
-        Tracker.autorun(() => {
-            this.setState({
-                currentChannelId: Session.get('channelId')
-            });
-        });
     }
 
     render() {
@@ -38,7 +29,7 @@ export default class Channels extends Component {
                 }
 
                 channels.push(
-                    <li key={`channel-${channel.name}`} className={this.state.currentChannelId == channel.channelId ? 'active' : ''}>
+                    <li key={`channel-${channel.name}`} className={this.props.currentChannelId == channel.channelId ? 'active' : ''}>
                         <Link to={`/channel/${channel.name}`}>
                             <span>
                                 <span className="icon">

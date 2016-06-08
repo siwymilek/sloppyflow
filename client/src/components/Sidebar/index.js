@@ -14,18 +14,22 @@ class Sidebar extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        const updateState = {};
         const channels = nextProps.channels.get('list');
-        
-        if(this.state.channels === channels) return;
-        
-        this.setState({channels});
+        const currentChannelId = nextProps.app.get('currentChannel');
+
+        if(this.state.channels !== channels) updateState.channels = channels;
+        if(this.state.currentChannelId !== currentChannelId) updateState.currentChannelId = currentChannelId;
+
+        this.setState(updateState);
     }
     
     constructor(props) {
         super(props);
         
         this.state = {
-            channels: []
+            channels: [],
+            currentChannelId: null
         }
     }
 
@@ -33,7 +37,7 @@ class Sidebar extends Component {
         return (
             <div className="sidebar-component">
                 <SidebarHeader/>
-                <Channels channels={this.state.channels}/>
+                <Channels channels={this.state.channels} currentChannelId={this.state.currentChannelId}/>
                 <SidebarFooter/>
             </div>
         );
@@ -42,6 +46,7 @@ class Sidebar extends Component {
 
 export default connect((state, ownProps) => {
     return {
-        channels: state.channels
+        channels: state.channels,
+        app: state.app
     }
 })(Sidebar);

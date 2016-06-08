@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Avatar from '../../common/Avatar';
+import { relativeTime } from '../../utils/time.helpers';
 
 class Message extends Component {
 
@@ -8,19 +9,20 @@ class Message extends Component {
     }
 
     render() {
-        const {avatar, username, pvUsername, message} = this.props;
+        // const {avatar, username, pvUsername, message} = this.props;
+        const {message, user: {username}, pvUsername, type, publishedAt} = this.props;
 
         return (
             <li className={'message-container'+(pvUsername == username ? ' sequential' : '')}>
                 <Avatar
-                    photo={avatar}
+                    photo={'http://forum.ravia.eu/images/users/avatar/Cycko_Party.jpg'}
                     size={40}
                     style={{marginRight: 10}}
                     radiusRatio={0.2}
                 />
 
                 <div>
-                    <p><span className="username">{username}</span> / 16:12</p>
+                    <p><span className="username">{username}</span> / {relativeTime(publishedAt)}</p>
                     <div className="text">
                         {message}
                     </div>

@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+import Store from '../../store';
+import { sendMessage } from '../../actions/conversation';
+
 import AutoSuggest from '../../common/AutoSuggest';
+import Callbacks from '../../../../imports/lib/callbacks';
 
 export default class MessageInput extends Component {
 
@@ -12,11 +18,27 @@ export default class MessageInput extends Component {
         }
     }
 
+    componentDidMount() {
+        Callbacks.add('openChannel', () => {
+            ReactDOM.findDOMNode(this.refs.msgInput).focus();
+        })
+    }
+
+    handleSendMessage(e) {
+        e.preventDefault();
+
+        const MsgInput = ReactDOM.findDOMNode(this.refs.msgInput);
+
+        Store.dispatch(sendMessage(MsgInput.value.trim()));
+
+        MsgInput.value = '';
+    }
+
     render() {
         return (
             <footer>
                 <div className="message-input-form-wrapper">
-                    <form action="" autocomplete="off" onSubmit={(e) => e.preventDefault()}>
+                    <form action="" autocomplete="off" onSubmit={this.handleSendMessage.bind(this)}>
                         <div className="ui-autosuggest-input-container">
                             <input
                                 ref="msgInput"

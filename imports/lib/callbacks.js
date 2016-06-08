@@ -1,5 +1,4 @@
 // https://raw.githubusercontent.com/steedos/chat/master/packages/rocketchat-lib/lib/callbacks.coffee
-
 /*
  * Callback hooks provide an easy way to add extra steps to common operations.
  * @namespace callbacks
@@ -35,7 +34,7 @@ callbacks.add = function(hook, callback, priority, id) {
         priority = callbacks.priority.MEDIUM;
     }
     callback.priority = priority;
-    callback.id = id || Random.id();
+    callback.id = id || 'id'+Math.random();
     if ((base = callbacks)[hook] == null) {
         base[hook] = [];
     }
