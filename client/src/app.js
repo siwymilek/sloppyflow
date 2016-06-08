@@ -37,8 +37,11 @@ export default class App extends Component {
         return (
             <Provider store={Store}>
                 <Router history={browserHistory}>
-                    <Route path="/" component={Layout} onEnter={(nextState) => this.getCurrentChannel(nextState.params.channelName)} onChange={(state, nextState) => this.getCurrentChannel(nextState.params.channelName)}>
-                        <IndexRoute component={Main} onEnter={this.requireAuth}/>
+                    <Route path="/" component={Layout} onEnter={(nextState, replace) => {
+                        this.requireAuth(nextState, replace);
+                        this.getCurrentChannel(nextState.params.channelName)
+                    }} onChange={(state, nextState) => this.getCurrentChannel(nextState.params.channelName)}>
+                        <IndexRoute component={Main}/>
                         <Route path="channel/:channelName" component={Channel}/>
                         <Route path="about" component={About}/>
                     </Route>
