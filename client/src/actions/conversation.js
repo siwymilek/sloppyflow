@@ -1,13 +1,16 @@
 import { MessageHistory } from '../../../imports/models/MessageHistory';
+import { Tracker } from 'meteor/tracker';
 
 export function getMessageHistory(channelId) {
     return function (dispatch) {
         Meteor.subscribe('messageHistory', channelId, () => {
-            const messages = MessageHistory.find({channelId});
+            Tracker.autorun(() => {
+                const messages = MessageHistory.find({channelId});
 
-            dispatch({
-                type: 'FETCH_MESSAGE_HISTORY',
-                messages
+                dispatch({
+                    type: 'FETCH_MESSAGE_HISTORY',
+                    messages
+                });
             });
         });
     }

@@ -15,7 +15,7 @@ class Message extends Component {
         return (
             <li className={'message-container'+(pvUsername == username ? ' sequential' : '')}>
                 <Avatar
-                    photo={'http://forum.ravia.eu/images/users/avatar/Cycko_Party.jpg'}
+                    photo={'http://modexenergy.com/wp-content/themes/modex_wp/img/avatar.png'}
                     size={40}
                     style={{marginRight: 10}}
                     radiusRatio={0.2}
