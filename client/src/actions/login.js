@@ -23,6 +23,25 @@ export function login(username = '', password = '') {
     }
 }
 
+
+export function register(username = '', password = '') {
+    return function (dispatch) {
+        Accounts.createUser({username, password}, (response) => {
+            if(response) {
+                dispatch({
+                    type: 'REGISTER_ERROR',
+                    error: response.error,
+                    reason: response.reason
+                });
+            } else {
+                dispatch({
+                    type: 'REGISTER_SUCCESS'
+                });
+            }
+        });
+    }
+}
+
 export function logout() {
     Meteor.logout();
 

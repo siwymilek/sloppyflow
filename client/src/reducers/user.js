@@ -3,10 +3,11 @@ import Immutable from 'immutable';
 const initialState = Immutable.fromJS({
     data: null,
     error: null,
-    reason: null
+    reason: null,
+
 });
 
-export default function user(state = initialState, action: {}) {
+export default function user(state = initialState, action) {
 
     switch(action.type) {
         case 'SET_USER':

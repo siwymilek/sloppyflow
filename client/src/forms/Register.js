@@ -7,7 +7,7 @@ import ControlLabel from 'react-bootstrap/lib/ControlLabel';
 import FormControl from 'react-bootstrap/lib/FormControl';
 import Button from 'react-bootstrap/lib/Button';
 
-class Login extends Component {
+class Register extends Component {
     render() {
         const {fields: {username, password}, handleSubmit} = this.props;
         
@@ -39,24 +39,21 @@ class Login extends Component {
                 </FormGroup>
 
                 <Button type="submit" bsStyle="info">
-                    Login
+                    Register
                 </Button>
 
-                <Link to="register">
-                    <Button type="button" bsStyle="default" style={{marginLeft: 10}}>
-                        Register
-                    </Button>
+                <span style={{marginLeft: 20, color: '#eeeeee'}}>|</span>
+                <Link to="login">
+                    <Button type="button" bsStyle="link">get back to login</Button>
                 </Link>
-
-                <span style={{marginLeft: 20, color: '#eeeeee'}}>|</span> <Button type="button" bsStyle="link">remind password</Button>
             </form>
         );
     }
 }
 
-Login = reduxForm({
-    form: 'login',
+Register = reduxForm({
+    form: 'register',
     fields: ['username', 'password'],
-})(Login);
+})(Register);
 
-export default Login;
+export default Register;

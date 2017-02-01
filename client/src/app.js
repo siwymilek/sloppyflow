@@ -10,6 +10,7 @@ import Main from './components/Main';
 import Channel from './components/Channel';
 import About from './components/About';
 import Login from './components/Login';
+import Register from './components/Register';
 
 // load react-select dependency manually
 import 'react-select/dist/react-select.min.css';
@@ -47,6 +48,7 @@ export default class App extends Component {
                     </Route>
 
                     <Route path="login" component={Login}/>
+                    <Route path="register" component={Register}/>
                 </Router>
             </Provider>
         );
